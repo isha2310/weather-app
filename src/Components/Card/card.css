@@ -1,0 +1,28 @@
+.card1 {
+    margin-top: 1%;
+    width:100%;
+    background-color: #d3d1db;
+    padding-bottom: 5%;
+    padding-left: 3%;
+    border-radius: 3%;
+    float:right;
+}
+.weather-img {
+    display: block;
+    float: right;
+    padding-right: 2%;
+    padding-top: 2%;
+}
+
+.svg2{
+    height: 10em;
+}
+.report {
+    display: block;
+    float: left;
+    width: 55%;
+    padding-top: 3% ;
+    font-family: 'Noto Serif JP';
+    height: 3%;
+    font-size: 1em;
+}

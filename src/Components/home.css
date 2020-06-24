@@ -1,0 +1,59 @@
+*{
+    color: #2f2e41;
+    font-family: 'Noto Serif JP';
+}
+body{
+    margin:0%;
+}
+.fullscreen{
+    height: 100vh;
+    top:0;
+    left:0;
+}
+.btn {
+    background-color: #f9a826;
+    margin-top: 5%;
+    display: block;
+    border-style: solid;
+    border-width: 1px;
+    padding: 0.5% 5%;
+    font-size: 1.2em;
+}
+input{
+    padding: 0.5%;
+    font-size: 1.2em;
+    max-width: 90%;
+    padding-bottom: 1%;
+}
+.svg{
+    height: 80%;
+    width: 100%;
+    margin-top: 10%;
+}
+.content {
+    height: 35vh;
+    background-color: #d3d1db;
+    margin: 15% 10%;
+    border-radius: 3%;
+    padding-left: 2.3%;
+    padding-top: 3%;
+   
+}
+.message {
+    font-size: 1em;
+
+}
+@media screen and (max-width: 780px) {
+    .fullscreen{
+        overflow: scroll;
+        height: 100%;
+        position: fixed;
+        color: 'red';
+    }
+    .btn{
+        margin-top: 10%;
+    }
+    .content{
+        height: 36vh;
+    }
+}
