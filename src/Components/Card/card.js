@@ -21,7 +21,6 @@ const Card = (props)  => {
         else
             return <img src={Sunny} alt="" className="svg2"/>
     }
-
     const timestamp = () => {
         let myDate = new Date()
         let hours = myDate.getHours()
@@ -29,7 +28,6 @@ const Card = (props)  => {
         let localtime = hours+':'+minutes
         return <h1 >{localtime}</h1>
     }
-
     return (
         <div className="card1" style={(props.data.current.is_day==='no')?{backgroundColor: '#76757a'}:{}}>           
             <div className="report">

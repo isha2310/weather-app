@@ -1,11 +1,11 @@
 *{
     color: #2f2e41;
-    font-family: 'Noto Serif JP';
+    font-family: Times, serif;
+    font-weight: 400;
+    font-display: swap;
 }
 .fullscreen{
     height: 100vh;
-    top:0;
-    left:0;
 }
 .btn {
     background-color: #f9a826;
@@ -19,7 +19,6 @@
 input{
     padding: 0.5%;
     font-size: 1.2em;
-    max-width: 90%;
     padding-bottom: 1%;
 }
 .svg{
@@ -28,29 +27,21 @@ input{
     margin-top: 10%;
 }
 .content {
-    height: 35vh;
+    height: 30vh;
     background-color: #d3d1db;
     margin: 15% 10%;
     border-radius: 3%;
     padding-left: 2.3%;
-    padding-top: 3%;
-   
-}
-.message {
-    font-size: 1em;
-
+    padding-top: 2.8%;  
 }
 @media screen and (max-width: 780px) {
     .fullscreen{
-        overflow: scroll;
         height: 100%;
-        position: fixed;
-        color: 'red';
     }
     .btn{
         margin-top: 10%;
     }
     .content{
-        height: 36vh;
+        height: 33vh;
     }
 }

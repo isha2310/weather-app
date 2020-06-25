@@ -21,7 +21,6 @@ const Home = () => {
         setError('')
         setLocation(event.target.value)
     }
-
     const getCoords = (url) => {
         return fetch(url, {
             method:"GET",
@@ -34,7 +33,6 @@ const Home = () => {
         })
         .catch(err => console.log(err))
     }
-
     const forecast = (url) => {
         return fetch(url, {
             method:"GET", 
@@ -63,14 +61,12 @@ const Home = () => {
             setLoading(false)
         })
     }
-
     const handleSearch = (event) => {
         event.preventDefault()
         setLoading(true)
         geocode(location)
     }
     const Flash = () => {
-
         if(loading === true){
             return <PropagateLoader
             css={override}
@@ -89,7 +85,6 @@ const Home = () => {
 
             <Grid item xs={12} md={6} >
                <div className="content" style={(night)? {backgroundColor:'#76757a'}:{}}>
-               
                <form >
                    <h1>How It Feels?</h1>
                    <input onChange={handleChange}  type="text" placeholder="Enter the location" autoFocus/>
@@ -103,8 +98,7 @@ const Home = () => {
                {
                    error &&
                    <p>{error}</p>
-               }
-           
+               }          
                </div>
             </Grid>
             </Grid>
