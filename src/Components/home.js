@@ -13,7 +13,7 @@ const Home = () => {
 
     const [night, setNight] = useState(false)
     const [location, setLocation] = useState("")
-    const [data, setData] = useState("")
+    const [current, setCurrent] = useState("")
     const [error, setError ] = useState("")
     const [loading, setLoading] = React.useState(false)
 
@@ -47,17 +47,17 @@ const Home = () => {
             setLocation(res.features[0].place_name)
             const long = res.features[0].geometry.coordinates[0]
             const lat = res.features[0].geometry.coordinates[1]
-            const url = 'http://api.weatherstack.com/current?access_key=bfb8bb1fc3bc9398e81671f53ab8673b&query='+lat+','+long
+            const url = 'https://api.weatherbit.io/v2.0/current?lat='+lat+'&lon='+long+'&key=9b842a450e7a40a49653210d34483d35'
             forecast(url).then(res => {
-                setData(res)
-                setNight((res.current.is_day==='no')?true:false)
+                setCurrent(res)
+                setNight((res.data[0].pod==='n')?true:false)
                 setLoading(false)
                 setError('')
             })
         })
         .catch(err => {
             setError('Unable to find location! Please try again.')
-            setData('')
+            setCurrent('')
             setLoading(false)
         })
     }
@@ -92,8 +92,8 @@ const Home = () => {
                    {Flash()}
                </form>
                {
-                   data && 
-                   <Card data={data} location={location} />
+                   current && 
+                   <Card current={current} location={location} />
                }
                {
                    error &&

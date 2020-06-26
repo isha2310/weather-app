@@ -8,33 +8,25 @@ import './card.css'
 
 const Card = (props)  => {
     const imageSelector = () => {
-        const descriptions = props.data.current.weather_descriptions
-        const description = descriptions[0].toLowerCase()
-        if (description.includes('snow')) 
+        const descriptions = props.current.data[0].weather.description
+        const descrip = descriptions[0].toLowerCase()
+        if (descrip.includes('snow')) 
             return <img src={Snow} alt="" className="svg2"/>                
-        else if (description.includes('rain') ||description.includes('thunder') ||description.includes('mist')||description.includes('shower')||description.includes('haze')) 
+        else if (descrip.includes('rain') ||descrip.includes('thunder') ||descrip.includes('mist')||descrip.includes('shower')||descrip.includes('haze')) 
             return <img src={Rain} alt="" className="svg2"/>                
-        else if (description.includes('wind') || description.includes('storm') ) 
+        else if (descrip.includes('wind') || descrip.includes('storm') ) 
             return <img src={Wind} alt="" className="svg2"/>
-        else if (description.includes('overcast') || description.includes('cloudy')|| (props.data.current.is_day==='no')||description.includes('cyclone'))
+        else if (descrip.includes('overcast') || descrip.includes('cloud')|| (props.current.data[0].pod==='n')||descrip.includes('cyclone'))
             return <img src={Cloudy} alt="" className="svg2"/>                
         else
             return <img src={Sunny} alt="" className="svg2"/>
     }
-    const timestamp = () => {
-        let myDate = new Date()
-        let hours = myDate.getHours()
-        let minutes = myDate.getMinutes()
-        let localtime = hours+':'+minutes
-        return <h1 >{localtime}</h1>
-    }
     return (
-        <div className="card1" style={(props.data.current.is_day==='no')?{backgroundColor: '#76757a'}:{}}>           
+        <div className="card1" style={(props.current.data[0].pod==='n')?{backgroundColor: '#76757a'}:{}}>           
             <div className="report">
-                {timestamp()}
                 <p>{props.location}</p>
-                <p>Weather is {props.data.current.weather_descriptions}.</p>
-                <p>Temperature is {props.data.current.temperature} degrees, but it feels like {props.data.current.feelslike} degrees.</p>
+                <p>{props.current.data[0].weather.description}.</p>
+                <p>Temperature is {props.current.data[0].temp} degrees, but it feels like {props.current.data[0].app_temp} degrees.</p>
             </div>
             <div className="weather-img">
                 {imageSelector()}
