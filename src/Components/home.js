@@ -18,6 +18,7 @@ const Home = () => {
     const [loading, setLoading] = React.useState(false)
 
     const handleChange = (event) => {
+        setCurrent('')
         setError('')
         setLocation(event.target.value)
     }

@@ -9,7 +9,7 @@ import './card.css'
 const Card = (props)  => {
     const imageSelector = () => {
         const descriptions = props.current.data[0].weather.description
-        const descrip = descriptions[0].toLowerCase()
+        const descrip = descriptions.toLowerCase()
         if (descrip.includes('snow')) 
             return <img src={Snow} alt="" className="svg2"/>                
         else if (descrip.includes('rain') ||descrip.includes('thunder') ||descrip.includes('mist')||descrip.includes('shower')||descrip.includes('haze')) 
